@@ -14,19 +14,23 @@
       return num * num;
    }
 
-   square(10) + 2;
-   square(100) + square(77);
-   square(8 / 2)
-   square(2 + 17);
-   square(square(15));
+   square(10) + 2 =102
+   square(100) + square(77)=15929
+   square(8 / 2)=16
+   square(2 + 17)=361
+   square(square(15))=50625
    ```
 
 2. Write a sentence in plain English describing how `square(square(15))` is
-   evaluated.
+   evaluated. 
+   
+   calculate square from 15 to the first time after we apply the square on the result
 
 3. Rename `square`'s `num` parameter in your above code to `monkey`, and
    rename the uses of that parameter in the body to `monkey` as well. Will the
-   function `square` still work? Why or why not?
+   function `square` still work? Why or why not? 
+   
+   work because we can put anything in parameter  
 
 4. What is wrong with the following definitions of `square`? Write a sentence or
    two describing the issue(s); then, try copying the erroneous examples into a
@@ -38,43 +42,50 @@
    function square(monkey) {
      return x * x;
    }
+    x is not defined at square
+   
 
    function square(5) {
      return 5 * 5;
    }
+   Unexpected number
 
    function square("x") {
      return "x" * "x";
    }
+   Unexpected string
    ```
 
 5. Fix the invalid syntax in the following functions (you can copy and paste these
    invalid definitions into your console and then edit them there):
 
    ```js
-   func square1(x {
+   function  square1(x){
      return x * x;
    }
 
-   functionsquare2 x)
+   function square2(x){
      return x * x;
    }
 
-   function (x) square3 {
+   function square3(x){
      return x * x;
+   }
    ```
 
 6. The following functions exhibit poor style -- fix these issues using the
    original version of `square` as a reference.
 
    ```js
-   function square(x){return x*x;}
+   function square(x){
+    return x * x;
+    }
 
-   function square (x) { return x *x;
+   function square(x){ 
+    return x * x;
    }
 
-   function square(x)
-   {
+   function square(x){
    return x * x;
    }
    ```
@@ -83,18 +94,19 @@
 
   ```js
   function cube(x) {
-    // your code here
+  return x * x * x;
   }
   ```
+  // cube function 
 
 8. Complete the function `fullName` that should take two parameters, `firstName`
    and `lastName`, and returns the `firstName` and `lastName` concatenated
    together with a space in between.
 
   ```js
-  // don't forget the parameters!
-  function fullName() {
-    // your code here
+ 
+  function fullName(name,lastname) {
+    return name +" "+lastname
   }
   fullName("John", "Doe") // => "John Doe"
   ```
@@ -102,8 +114,18 @@
 9. Write a function `average` that takes two numbers as input (parameters), and
    returns the average of those numbers.
 
+```js
+ function average (a,b){
+ return (a+b)/2;
+ }
+
+```
 10. Write a function `greeter` that takes a name as an argument and *greets*
     that name by returning something along the lines of `"Hello, <name>!"`
+    ```js
+    function greeter(name){
+      return "hello"+","+"<"+"name"+">"+"!"
+   }
 
 11. Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
     formulas into JavaScript functions.
@@ -115,7 +137,103 @@
     function perimeterRect(l, w) {
       return 2 * (l + w);
     }
-    ```
+    perimeterRect(2, 6)=16
+
+    
+    function areaSquare(s){
+      return s * s ;
+    }
+    function perimetersquare(s){
+      return 4 * s;
+    }
+
+    function arearectangle(l,w){
+      return l * w;
+    }
+    function perimeterrectangle(l,w){
+      return 2 * (l+w);
+    }
+
+    function areaparallegram(l,h){
+      return l * h;
+    }
+    function perimeterparallegram(l,w){
+      return 2 * (l+w);
+    }
+
+    function areatrapezoid(b1,b2,h){
+      return (1/2) * h * (b1+b2);
+    }
+    function perimetertrapezoid(b1,b2,s1,s2){
+      return s1 + s2 + b1 + b2;
+    }
+
+    function areacircle(r){
+      return Math.PI * Math.pow(r, 2)
+    }
+    function perimetercircle(r){
+      return 2 * Math.PI * r;
+    }
+
+    function volumerectangularsolid(l,w,h){
+      V = l * w * h;
+      return V;
+    }
+    function surfacearearectangularsolid(l,w,h){
+      S = 2 * (l*h + w*h + w*l )
+      return S;
+    }
+
+    function volumeCube(s){
+      V = Math.pow(s,3);
+      return V;
+    }
+    function surfaceareaCube(s){
+      S = 6*Math.pow(s,2); 
+      return S;
+    }
+
+    function volumeCylinder(r,h){
+      V = Math.PI * Math.pow(r,2) * h;
+      return V;
+    }
+    function surfaceareaCylinder(r,h){
+      S = (2 * Math.PI * r * h)+(2 * Math.PI * Math.pow(r,2));  
+      return S;
+    }
+
+    function volumeSphere(r){
+      V = (4/3) *Math.PI * Math.pow(r,3) ;
+      return V;
+    }
+    function surfaceareaSphere(r){
+      S = 4 * Math.PI * Math.pow(r,2) ;  
+      return S;
+    }
+
+    function volumeCone(r,h){
+      V = (1/3) * Math.PI * Math.pow(r,2) * h ;
+      return V;
+    }
+    function surfaceareaCone(r,h){
+      S = Math.PI * r * Math.sqrt(Math.pow(r,2)+Math.pow(h,2)) ;  
+      return S;
+    }
+
+    function volumeCone(l,w,h){
+      V = (1/3) * l*w*h ;
+      return V;
+    }
+
+    function volumeCone(R,r,h){
+      V = (1/3) * Math.PI * h * (Math.pow(r,2)+r*R+Math.pow(R,2))  ;
+      return V;
+    }
+    function surfaceareaCone(R,r,s){
+      S = Math.PI * s * (R+r);  
+      return S;
+    }
+
 
     **NOTE:** JavaScript provides some nifty mathematical functions and
     constants built into the language that you'll need for this exercise. The
@@ -161,9 +279,26 @@ Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu
   compounded quarterly (*n* = 4) after 6 years (*t* = 6) (you can use `Math.pow`
   to do exponentiation).
 
+```js
+function futureValue (P,i,n,t){
+    F= P * Math.pow((1+(i/n)),n*t)
+    return F;
+}
+```
+
 2. Write a `power` function that accepts the parameters `base` and `exponent`
    and returns the result. Replace `square` and `cube` with the `power` function
    you just wrote. Do not use `Math.pow`.
+
+```js
+var exponent = function(base, exp) {
+    if(exp===0){
+        return 1
+    }
+    else{return base * exponent(base ,exp-1)
+   }
+  }
+  ````
 
 3. Write your own square-root function called `sqrt` that accepts a `number`
    parameter and returns an approximate square root. Square-root approximations
